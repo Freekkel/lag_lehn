@@ -1,0 +1,169 @@
+\chapter{Grundbegriffe der Logik und Mengenlehre}
+Mathematische Aussagen haben einen Wahrheitswert, sie können wahr (w) oder falsch (f) sein. 
+\section{Die Verknüpfungsoperatoren}
+Die Verknüpfungsoperatoren sind:
+\qquad\\
+
+\begin{tabular}{ccc}
+\underline{$\wedge$} \underline{u}nd & \underline{$\vee$} \underline{o}der  & $\neg$  nicht \\ 
+unten offen & oben offen &  \\ 
+et & rel & non \\ 
+\end{tabular} 
+
+\qquad\\
+$A \wedge B$ ist genau dann wahr, wenn sowohl $A$ wie $B$ wahr sind.\\
+$A \vee B$ ist wahr, wenn $A$ oder $B$ oder beide wahr sind.\\
+Dies kann man sich simpel veranschaulichen mit einer sogenannten Wahrheitstafel.
+\qquad\\
+
+\begin{tabular}{c|c|cc}
+ $A$ & $B$ & $A \wedge B$ & $A \vee B$ \\ 
+\hline \rule[-2ex]{0pt}{5.5ex} w & w & w & w \\ 
+ w & f & f & w \\ 
+ f & w & f & w \\ 
+ f & f & f & f \\ 
+\end{tabular} 
+\qquad\\
+
+$\neg A$ \glqq nicht $A$\grqq\quad ist wahr wenn $A$ falsch ist. Sie folgende Wahrheitstabelle\\
+\qquad\\
+\begin{tabular}{c|c}
+$A$ & $\neg A$ \\ 
+\hline w & f \\
+f & w \\ 
+\end{tabular} 
+\qquad\\
+
+\section{Rechenregeln der Logik}
+\begin{enumerate}
+\item $\neg (\neg A) = A$
+\item $A \vee \neg A = w$ $\leftarrow$ (Satz vom ausgeschlossenen Dritten)
+\item $A \wedge \neg A = f$ $\leftarrow$ (Satz vom Widerspruch)
+\item $\neg (A \wedge B) = \neg A \vee  \neg B$\\
+$\neg (A \vee B) = \neg A \wedge \neg B$
+\item $\rightsquigarrow A \wedge B = \neg (\neg A \vee \neg B)$\\
+$\rightsquigarrow A \vee B = \neg ( \neg A \wedge \neg B)$
+\end{enumerate}
+
+\subsection{Distributivitätsregeln}
+$(A_{1} \vee A_{2} \vee \dots \vee A_{n}) \wedge B = (A_{1} \wedge B ) \vee (A_{2} \wedge B) \vee \dots \vee (A_{n} \wedge B)$\\
+$(A_{1} \wedge A_{2} \wedge \dots \wedge A_{n}) \vee B = (A_{1} \vee B ) \wedge (A_{2} \vee B) \wedge \dots \wedge (A_{n} \vee B)$
+
+\subsection{Kombinationen}
+\begin{description}
+\item[Entweder $A$ oder $B$ (xor): ] $(A \wedge \neg B) \vee(\neg A \wedge B)$
+\item[Implikationen: ] $A \Rightarrow B$ \glqq$A$ inpliziert $B$\grqq\quad oder\quad\glqq aus $A$ folgt $B$\grqq\\
+Wenn $A \Rightarrow B$ wahr ist, ist \underline{nichts} über $A$ oder $B$ bekannt, sondern nur über deren Beziehung. \\
+\begin{tabular}{cc|c}
+ $A$ & $B$ & $A \Rightarrow B$ \\ 
+\hline \rule[-2ex]{0pt}{5.5ex} w & w & w \\ 
+ w & f & f \\ 
+ f & w & w \\ 
+ f & f & w \\ 
+\end{tabular} 
+
+$A$ ist eine hinreichende Bedingung für $B$\\
+$B$ ist eine notwendige Bedingung für $A$
+\end{description}
+
+\section{Mengenlehre}
+Definition von Georg Cantor 1895: \glqq Unter einer \glqq Menge \grqq verstehten wir jede Zusammenfassung $M$ von wohl unterschiedenen Objekten $m$ usnerer Anschauung oder unseres Denkens (welche die \glqq Elemente \grqq von $M$ genannt werden) zu einem Ganzen.\grqq\\
+
+Man schreibt $m \in M$ falls $m$ Element von $M$ ist, sonst $m \notin M$. 
+\subsection{Quantoren:}
+\begin{description}
+\item[Allquantor: ] $\forall$
+\item[Existenzquantor: ] $\exists$
+\end{description}
+Es sei $P(a)$ eine Aussage über ein Element $a$
+\begin{description}
+\item[$\forall a \in M : P(a)$] = Für alle $a$ aus $M$ gilt $P(a)$. 
+\item[$\exists a \in M : P(a)$] = Es gibt wenigstens ein $a$ aus $M$ gilt $P(a)$.
+\end{description}
+\subsubsection{Verneinung}
+\begin{align*}
+\neg (\forall a \in M : P(a)) &= \exists a \in M : \neg P(a)\\
+\neg (\exists a \in M: P(a)) &= \forall a \in M: \neg P(a)
+\end{align*}
+Es gilt: $A=B\Leftrightarrow\forall a: (a \in A) \Leftrightarrow (a \in B)$\\
+\textbf{Definition :} $A \subset B$(\glqq $A$ ist eine Teilmenge/Untermenge von $B$\grqq) $\Leftrightarrow \forall a \in A: a \in B$. Man sagt auch $B$ ist eine Obermenge von $A$, $B \supset A$ z.B:
+\begin{itemize}
+\item $\varnothing$ leere Menge, andere Notation $\varnothing = \{\}$. Es gilt stets $\varnothing \subset A$.
+\item Für alle Mengen $A$ gilt: $A\subset A$
+\end{itemize}
+\begin{description}
+\item[Definition:] $A$ ist eine Teilmenge von $B \Leftrightarrow A \subset B$ jedoch $A \neq B$\\Schreibweise: $A \subsetneqq B$
+\item[Definition:] Es seien $A,B$ Mengen. Die Menge $A \setminus B := \{a\in A | a \notin B\}$ heißt Komplement.
+\item[Definition:] Es seien $A,B$ Mengen
+	\begin{enumerate}
+		\item $A \cup B := \{a|a\in A \vee a \in B \}$ ist die Vereinigungsmenge\\ Vereinigung von $A$ und $B$
+		\item $A \cap B := \{a|a\in A \wedge a \in B \}$ ist der Durchschnitt von $A$ und $B$.
+	\end{enumerate} 
+\end{description}
+% Definition of circles
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\setlength{\parskip}{5mm}
+
+\begin{minipage}{0.4\textwidth}
+	\begin{tikzpicture}
+		\begin{scope}
+	     \clip \firstcircle;
+	        \fill[filled] \secondcircle;
+	    \end{scope}
+	    \draw[outline] \firstcircle node {$A$};
+	    \draw[outline] \secondcircle node {$B$};
+	    \node[anchor=south] at (current bounding box.north) {$A \cap B$};
+	\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+	%Set A or B but not (A and B) also known a A xor B
+	\begin{tikzpicture}
+	    \draw[filled, even odd rule] \firstcircle node {$A$}
+									\secondcircle node{$B$};
+	    \node[anchor=south] at (current bounding box.north) {$\overline{A \cap B}$};
+	\end{tikzpicture}
+\end{minipage}%
+
+\begin{minipage}{0.4\textwidth}
+	% Set A or B
+	\begin{tikzpicture}
+	    \draw[filled] \firstcircle node {$A$}
+	                  \secondcircle node {$B$};
+	    \node[anchor=south] at (current bounding box.north) {$A \cup B$};
+	\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+	% Set A but not B
+	\begin{tikzpicture}
+	    \begin{scope}
+	        \clip \firstcircle;
+	        \draw[filled, even odd rule] \firstcircle node {$A$}
+	                                     \secondcircle;
+	    \end{scope}
+	    \draw[outline] \firstcircle
+	                   \secondcircle node {$B$};
+	    \node[anchor=south] at (current bounding box.north) {$A \setminus B$};
+	\end{tikzpicture}
+\end{minipage}%
+\begin{description}
+\item[Definition:] Es sei $A$ eine Menge. Die Potenzmenge von $A$ ist die Menge $P(a) = \{ B | B \subset A \}$\\
+\underline{Bsp:} 
+	\begin{itemize}
+	\item $A = \{0,1\}, P(A) = \{\{0\},\{1\}, \{0,1\}, \{\} \}$
+	\item $A = \varnothing = P(\varnothing) = \{\varnothing\} = \{\{\}\}$
+	\item $P(P(\varnothing)) = \{\varnothing,\{\varnothing\}\} = \{\{\},\{\{\}\}\}$
+	\item \# der Elemente in $P(A) $ entspricht $2^{M}$ wobei hier $M$ = Mächtigkeit von $A$. Mächtigkeit bedeutet \# der Elemente in $A$.
+	\end{itemize} 
+\item[Definition:] $(a,b):= \{\{a\},\{a,b\}\}$ Im ersten Übungsblatt galt es zu beweisen, dass\\ $(a,b) - (a',b') \Leftrightarrow a = a', b=b'$
+\item[Definition:] $A,B$ seien Mengen\\
+$A\times B := \{(a,b)|a\in A, b\in B\}$ \\
+heißt das kartesische Produkt von $A$ und $B$.
+\end{description}
