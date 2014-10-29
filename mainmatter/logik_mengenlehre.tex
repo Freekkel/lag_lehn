@@ -100,6 +100,7 @@ Es gilt: $A=B\Leftrightarrow\forall a: (a \in A) \Leftrightarrow (a \in B)$\\
 		\item $A \cap B := \{a|a\in A \wedge a \in B \}$ ist der Durchschnitt von $A$ und $B$.
 	\end{enumerate} 
 \end{description}
+\subsubsection{Mengen grafisch dargestellt}
 % Definition of circles
 \def\firstcircle{(0,0) circle (1.5cm)}
 \def\secondcircle{(0:2cm) circle (1.5cm)}
@@ -111,6 +112,8 @@ Es gilt: $A=B\Leftrightarrow\forall a: (a \in A) \Leftrightarrow (a \in B)$\\
     outline/.style={draw=circle edge, thick}}
 
 \setlength{\parskip}{5mm}
+\begin{figure}
+
 
 \begin{minipage}{0.4\textwidth}
 	\begin{tikzpicture}
@@ -153,6 +156,8 @@ Es gilt: $A=B\Leftrightarrow\forall a: (a \in A) \Leftrightarrow (a \in B)$\\
 	    \node[anchor=south] at (current bounding box.north) {$A \setminus B$};
 	\end{tikzpicture}
 \end{minipage}%
+\caption{Mengen grafisch dargestellt}
+\end{figure}
 \begin{description}
 \item[Definition:] Es sei $A$ eine Menge. Die Potenzmenge von $A$ ist die Menge $P(a) = \{ B | B \subset A \}$\\
 \underline{Bsp:} 
